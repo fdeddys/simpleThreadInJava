@@ -23,6 +23,7 @@ public class Main {
         };
         tr.start();
 
+        //Thread tr2 = new Thread(new MyRunnable(), "Implement thread");
         Thread tr2 = new Thread(new MyRunnable());
         tr2.start();
 
@@ -44,7 +45,6 @@ public class Main {
         @Override
         public void run() {
             super.run();    //To change body of overridden methods use File | Settings | File Templates.
-
             try {
                 for (int i=1; i<=10; i++){
                     System.out.println(this.getName() +  " " + i);
