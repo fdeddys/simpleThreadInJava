@@ -7,7 +7,26 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
+        Thread tr = new Thread("NEW Thread 2"){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    for (int i=1; i<=10; i++){
+                        System.out.println(this.getName() + " " + i);
+                        Thread.sleep(300);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        tr.start();
+
         jalankanThread();
+
     }
 
     private static void jalankanThread(){
@@ -30,12 +49,9 @@ public class Main {
             try {
                 for (int i=1; i<=10; i++){
                     System.out.println(this.getName() +  " " + i);
-                    Thread.sleep(500);
-
+                    Thread.sleep(200);
                 }
-
                 jalankanThread();
-
             } catch (InterruptedException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
@@ -47,14 +63,6 @@ public class Main {
             System.out.println("thread no " + nextNumb + " started ");
         }
 
-
-
     }
-
-
-
-
-
-
 
 }
